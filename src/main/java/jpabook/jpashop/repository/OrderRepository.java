@@ -21,7 +21,8 @@ public class OrderRepository {
     }
 
 //    public List<Order> findAll(OrderSearch orderSearch) {
-//        em.createQuery("select o from Order o join o.member m" +
+//
+//        return em.createQuery("select o from Order o join o.member m" +
 //                " where o.status = :status " +
 //                " and m.name like :name", Order.class)
 //                .setParameter("status", orderSearch.getOrderStatus())
@@ -29,5 +30,5 @@ public class OrderRepository {
 //                .setMaxResults(1000)
 //                .getResultList();
 //
-//    }
+//    } // query dsl 로 동적 쿼리 처리리
 }
