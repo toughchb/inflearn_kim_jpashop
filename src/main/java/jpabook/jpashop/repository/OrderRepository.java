@@ -20,15 +20,15 @@ public class OrderRepository {
         return em.find(Order.class, id);
     }
 
-//    public List<Order> findAll(OrderSearch orderSearch) {
-//
-//        return em.createQuery("select o from Order o join o.member m" +
-//                " where o.status = :status " +
-//                " and m.name like :name", Order.class)
-//                .setParameter("status", orderSearch.getOrderStatus())
-//                .setParameter("name", orderSearch.getMemberName())
-//                .setMaxResults(1000)
-//                .getResultList();
-//
-//    } // query dsl 로 동적 쿼리 처리리
+    public List<Order> findAll(OrderSearch orderSearch) {
+
+        return em.createQuery("select o from Order o join o.member m" +
+                " where o.status = :status " +
+                " and m.name like :name", Order.class)
+                .setParameter("status", orderSearch.getOrderStatus())
+                .setParameter("name", orderSearch.getMemberName())
+                .setMaxResults(1000)
+                .getResultList();
+
+    } // query dsl 로 동적 쿼리 처리리
 }
