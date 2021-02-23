@@ -1,1 +1,1 @@
-# inflearn_kim_jpashop1
+# inflearn_kim_jpashop2
