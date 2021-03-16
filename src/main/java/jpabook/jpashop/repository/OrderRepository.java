@@ -36,7 +36,7 @@ public class OrderRepository {
     } // query dsl 로 동적 쿼리 처리리
 
     public List<Order> findAllByString(OrderSearch orderSearch) {
-        //language=JPAQL
+        //language=JPQL
         String jpql = "select o From Order o join o.member m";
         boolean isFirstCondition = true;
         //주문 상태 검색
@@ -69,4 +69,11 @@ public class OrderRepository {
         return query.getResultList();
     }
 
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery("select o from Order o" +
+                " join fetch o.member m" +
+                " join fetch o.delivery d", Order.class)
+                .getResultList();
+
+    }
 }
